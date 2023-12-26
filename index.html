@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Calculadora</title>
+  <link rel="stylesheet" href="styles.css">
+   <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none; /* Remove a borda do iframe, se necessário */
+    }
+  </style>
+</head>
+<body>
+  <div class="status-bar">
+    <div class="battery" id="battery">--%</div>
+    <div class="date-time">
+      <span id="time"></span>
+      <span id="date"></span>
+    </div>
+  </div>
+<div class="rede" id="statusIndicator"></div>
+  
+  <div class="cash">
+ <h1>Calculadora de CashBack</h1>
+
+  <label for="valorCompra">Valor da Compra:</label>
+  <input type="number" id="valorCompra" placeholder="Valor total da compra">
+  <button onclick="calcular()">Calcular</button>
+
+  <p id="cashback"></p>
+  <p id="compraMinima"></p>
+  </div>
+  <script>
+    function calcular() {
+      const valorCompra = document.getElementById('valorCompra').value;
+      
+      if (valorCompra !== '') {
+        const vintePorCento = parseFloat(valorCompra) * 0.2;
+        const compraMinima = vintePorCento / 0.4;
+        
+        document.getElementById('cashback').textContent = `Cashback: R$ ${vintePorCento.toFixed(2)}`;
+        document.getElementById('compraMinima').textContent = `Compra Mínima: R$ ${compraMinima.toFixed(2)}`;
+      } else {
+        document.getElementById('cashback').textContent = '';
+        document.getElementById('compraMinima').textContent = 'Por favor, insira o valor da compra.';
+      }
+    }
+  </script>
+  
+  
+  
+  <iframe src="https://caliel0001.github.io/Calculadora-/" width="800" height="600" frameborder="0"></iframe>
+  
+  <script src="script.js"></script>
+</body>
+</html>
