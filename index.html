@@ -46,7 +46,7 @@
       
       if (valorCompra !== '') {
         const vintePorCento = parseFloat(valorCompra) * 0.2;
-        const compraMinima = vintePorCento / 0.3;
+        const compraMinima = vintePorCento / 0.2;
         
         document.getElementById('cashback').textContent = `Cashback: R$ ${vintePorCento.toFixed(2)}`;
         document.getElementById('compraMinima').textContent = `Compra Mínima: R$ ${compraMinima.toFixed(2)}`;
