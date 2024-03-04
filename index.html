@@ -33,7 +33,7 @@
   <div class="cash">
  <h1>Calculadora de CashBack</h1>
 
-    <p> Valor do cashback é limitado a 80% da compra anterior </p>
+    
 
   <label for="valorCompra">Valor da Compra:</label>
   <input type="number" id="valorCompra" placeholder="Valor total da compra">
@@ -48,7 +48,7 @@
       
       if (valorCompra !== '') {
         const vintePorCento = parseFloat(valorCompra) * 0.2;
-        const compraMinima = vintePorCento / 0.2;
+        const compraMinima = vintePorCento / 0.3;
         
         document.getElementById('cashback').textContent = `Cashback: R$ ${vintePorCento.toFixed(2)}`;
         document.getElementById('compraMinima').textContent = `Compra Mínima: R$ ${compraMinima.toFixed(2)}`;
